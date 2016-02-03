@@ -1,0 +1,34 @@
+<html>
+<Head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" ></script>
+<link rel="stylesheet" src="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<script >
+  $(document).ready(function(){   
+$("#txtChange").on("keyup", function() {
+var t = $("#txtChange").val(); 
+    $("#lblChange").html("hello " + t); 
+});  
+ });
+ function ChangeLblSuccess(msg)
+{
+$("#lblChangeBtn").html(msg); 
+}
+</script>
+</Head>
+<body class="container" ng-app>
+<div class="jumbotron">
+<input type="text" ng-model="yourName" placeholder="Enter a name here">
+<h2>Hello {{yourName}}</h2>
+</div>
+<h1> ngModel </h1>
+name : <input type="text" id="txtChange"/>
+<div id="lblChange"></div>
+
+<h1> ngClick </h1>
+<input type="Button" id="btnSuccess" value="Success" onClick="javaScript:ChangeLblSuccess('Contenu success avec angular');"/> 
+<input type="Button" id="btnDaanger" value="Danger" onClick="javaScript:ChangeLblSuccess('Danger');"/>
+<input type="Button" id="btnDaanger" value="Default" onClick="javaScript:ChangeLblSuccess('');"/>
+<div id="lblChangeBtn"  ></div>
+<script src="bower_components/angular/angular.min.js"></script> 
+</body>
+</html>
